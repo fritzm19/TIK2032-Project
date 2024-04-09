@@ -52,11 +52,6 @@ li a:hover {
   margin-top: 20px;
 }
 
-img {
-  width: 100%;
-  height: auto;
-}
-
 @media (max-width: 400px) {
   .nav-bar {
     -webkit-flex-direction: column;
