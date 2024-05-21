@@ -1,9 +1,30 @@
 * {
   font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box; /* Add this to ensure padding and borders are included in the element's total width and height */
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Ensure the body and html take up the full height */
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure the container takes up at least the full height of the viewport */
+}
+
+.main-content {
+  padding: 5px;
+}
+
+main {
+  flex: 1; /* Make the main content area grow to fill the remaining space */
 }
 
 .nav-bar {
-  display:-webkit-flex;
+  display: flex;
   width: 100%;
   background-color: #333333;
   overflow: auto;
@@ -47,13 +68,14 @@ li a:hover {
 
 @media (max-width: 328px) {
   .nav-bar {
-    -webkit-flex-direction: column;
     flex-direction: column;
   }
 }
 
+/* Gallery */
+
 .gallery {
-  display:-webkit-flex;
+  display: flex;
   width: 100%;
   overflow: auto;
 }
@@ -66,10 +88,11 @@ li a:hover {
 
 @media (max-width: 768px) {
   .gallery {
-    -webkit-flex-direction: column;
     flex-direction: column;
   }
 }
+
+/* Blog */
 
 .article img {
   max-width: 100%;
@@ -81,18 +104,12 @@ li a:hover {
   }
 }
 
+/* Contact */
+
+/* Footer */
+
 .footer {
-  margin-top: auto;
-  position: relative;
-  bottom: 0;
-  width: 100%;
   background-color: #f1f1f1;
   text-align: center;
   padding: 10px;
-  margin-top: 20px;
 }
-
-/*
-  Contact
-*/
-
