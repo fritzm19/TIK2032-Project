@@ -45,16 +45,49 @@ li a:hover {
   background-color: #111111;
 }
 
-.footer {
-  background-color: #f1f1f1;
-  text-align: center;
-  padding: 10px;
-  margin-top: 20px;
-}
-
-@media (max-width: 400px) {
+@media (max-width: 328px) {
   .nav-bar {
     -webkit-flex-direction: column;
     flex-direction: column;
   }
+}
+
+.gallery {
+  display:-webkit-flex;
+  width: 100%;
+  overflow: auto;
+}
+
+.gallery-image {
+  padding: 5px;
+  width: fit-content;
+  float: center;
+}
+
+@media (max-width: 768px) {
+  .gallery {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+}
+
+.article img {
+  max-width: 100%;
+}
+
+@media (max-width: 620px) {
+  .article img {
+    width: 100%;
+  }
+}
+
+.footer {
+  margin-top: auto;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  background-color: #f1f1f1;
+  text-align: center;
+  padding: 10px;
+  margin-top: 20px;
 }
