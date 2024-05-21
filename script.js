@@ -1,8 +1,9 @@
 // Display a welcome alert when the page loads
-///*
+/*
 window.onload = function () {
 	alert("Welcome to my personal homepage!");
 };
+*/
 
 // Add functionality to a button (if you add one in the HTML)
 /*
