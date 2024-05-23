@@ -9,6 +9,6 @@ while($row = $result->fetch_assoc()) {
     $images[] = $row;
 }
 
-echo json_encode($images);
+return $images;
 $conn->close();
 ?>

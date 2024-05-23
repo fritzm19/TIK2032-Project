@@ -1,4 +1,3 @@
-// Display a welcome alert when the page loads
 document.addEventListener("DOMContentLoaded", function () {
 	if (document.getElementById("gallery")) {
 		fetch("php/get_gallery.php")
@@ -7,11 +6,13 @@ document.addEventListener("DOMContentLoaded", function () {
 				const galleryDiv = document.getElementById("gallery");
 				data.forEach((image) => {
 					const img = document.createElement("img");
-					img.src = image.image_url;
-					img.alt = image.title;
+					// Use absolute path to the image directory
+					img.src = image.image_path;
+					img.alt = image.image_alt;
 					galleryDiv.appendChild(img);
 				});
-			});
+			})
+			.catch((error) => console.error("Error fetching gallery data:", error));
 	}
 
 	if (document.getElementById("blog")) {
@@ -29,7 +30,8 @@ document.addEventListener("DOMContentLoaded", function () {
 					articleDiv.appendChild(content);
 					blogDiv.appendChild(articleDiv);
 				});
-			});
+			})
+			.catch((error) => console.error("Error fetching blog data:", error));
 	}
 });
 
