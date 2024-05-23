@@ -1,12 +1,37 @@
+/* Global Styles */
 * {
   font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box; /* Ensures padding and borders are included in the element's total width and height */
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Ensures the body and html take up the full height */
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensures the container takes up at least the full height of the viewport */
+}
+
+.main-content {
+  padding: 10px;
+  margin-top: 60px; /* Adjust based on the height of the fixed navbar */
+}
+
+main {
+  flex: 1; /* Makes the main content area grow to fill the remaining space */
 }
 
 .nav-bar {
-  display:-webkit-flex;
+  position: fixed;
+  top: 0;
   width: 100%;
   background-color: #333333;
   overflow: auto;
+  z-index: 1000; /* Ensures the navbar stays on top of other content */
 }
 
 .nav-bar-left {
@@ -27,6 +52,7 @@ ul {
   margin: 0;
   padding: 0;
   overflow: hidden;
+  display: flex; /* Ensures the menu items are displayed horizontally */
 }
 
 li {
@@ -47,13 +73,14 @@ li a:hover {
 
 @media (max-width: 328px) {
   .nav-bar {
-    -webkit-flex-direction: column;
     flex-direction: column;
   }
 }
 
+/* Gallery */
+
 .gallery {
-  display:-webkit-flex;
+  display: flex;
   width: 100%;
   overflow: auto;
 }
@@ -61,15 +88,16 @@ li a:hover {
 .gallery-image {
   padding: 5px;
   width: fit-content;
-  float: center;
+  margin: auto; /* Centers the images in the gallery */
 }
 
 @media (max-width: 768px) {
   .gallery {
-    -webkit-flex-direction: column;
     flex-direction: column;
   }
 }
+
+/* Blog */
 
 .article img {
   max-width: 100%;
@@ -81,18 +109,13 @@ li a:hover {
   }
 }
 
+/* Contact */
+
+/* Footer */
+
 .footer {
-  margin-top: auto;
-  position: relative;
-  bottom: 0;
-  width: 100%;
   background-color: #f1f1f1;
   text-align: center;
   padding: 10px;
-  margin-top: 20px;
+  margin-top: auto; /* Pushes the footer to the bottom */
 }
-
-/*
-  Contact
-*/
-

@@ -2,14 +2,14 @@
 <html lang="en">
 
 <head>
-  <title>Contact | Fritz Manambe</title>
+  <title>Blog | Fritz Manambe</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Fritz Elbert Christopel Manambe">
   <link rel="stylesheet" href="css/style.css">
   <!--
-      <script src="script.js"></script>
-    -->
+    <script src="script.js"></script>
+  -->
 </head>
 
 <body>
@@ -18,8 +18,8 @@
       <div class="nav-bar">
         <div class="nav-bar-left">
           <!--
-                  <span style="color: white;">Logo</span>
-                  -->
+            <span style="color: white;">Logo</span>
+            -->
         </div>
         <div class="menu">
           <nav>
@@ -35,25 +35,27 @@
     </header>
 
     <div class="main-content">
-      <h1 align="center">Contact Me</h1>
-
-      <p> You can reach me on:</p>
-
+      <h1 align="center">Blog</h1>
+      
       <section>
-        <p>Facebook:
-          <a href="https://facebook.com/fritzmanambe">
-            @fritzmanambe
-          </a>
-        </p>
-        <p>Instagram:
-          <a href="https://instagram.com/manambefritz">
-            @manambefritz
-          </a>
-        </p>
-        <p>Email:
-          <a href="mailto:manambefritz19@gmail.com">
-            manambefritz19@gmail.com
-          </a>
+        <?php
+          $articles = include 'php/get_blog.php';
+          foreach ($articles as $articles) {
+            echo '<article>';
+              echo '<div class="article">';
+                echo '<h1>';
+                  echo '' . $articles['title'] . '';
+                echo '</h1>';
+                echo '<img src="' . $articles['image_path'] . '" alt="' . $articles['image_alt'] . '">';
+                echo '<p>';
+                  echo '' . $articles['content'] . '';
+                echo '</p>';
+                echo '<a href="' . $articles['url'] . '">';
+                echo 'read more </a>';
+              echo '</div>';
+            echo '</article>';
+          }
+        ?>
       </section>
     </div>
   </div>
@@ -65,4 +67,4 @@
   </footer>
 </body>
 
-</html>
+</div>
