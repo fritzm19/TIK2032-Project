@@ -47,7 +47,7 @@
 
 	<footer>
 		<div class="footer">
-			© 2024 Fritz Manambe. All rights reserved.
+			&copy; 2024 Fritz Manambe. All rights reserved.
 		</div>
 	</footer>
 </body>
