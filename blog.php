@@ -1,3 +1,15 @@
+<?php
+  include 'php/config.php';
+
+  $sql = "SELECT * FROM blog";
+  $result = $conn->query($sql);
+
+  $articles = array();
+  while($row = $result->fetch_assoc()) {
+      $articles[] = $row;
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,7 +51,6 @@
       
       <section>
         <?php
-          $articles = include 'php/get_blog.php';
           foreach ($articles as $articles) {
             echo '<article>';
               echo '<div class="article">';
