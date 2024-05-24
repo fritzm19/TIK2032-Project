@@ -1,3 +1,15 @@
+<?php
+	include 'php/config.php';
+
+	$sql = "SELECT * FROM gallery";
+	$result = $conn->query($sql);
+
+	$images = array();
+	while($row = $result->fetch_assoc()) {
+			$images[] = $row;
+	}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -33,7 +45,6 @@
 			<h1 align="center">Gallery</h1>
 			<div class="gallery">
 				<?php
-					$images = include 'php/get_gallery.php';
 					foreach ($images as $image) {
 						echo '<div class="gallery-image">';
 						echo '<img src="' . $image['image_path'] . '" height=100% width=100%>';
